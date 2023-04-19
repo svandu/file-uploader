@@ -1,0 +1,81 @@
+:root {
+    --main-bg-color: #97DEFF;
+    --border-color: #62CDFF;
+    --text-color: #0ea6ec;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-section {
+    width: 800px;
+    min-height: 360px;
+    margin: 150px 0;
+    background-color: #fff;
+    border-radius: 15px;
+    
+}
+
+.drag-zone {
+    width: 700px;
+    min-height: 250px;
+    border: 3px dashed var(--border-color);
+    border-radius: 15px;
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.drag-icon-section {
+    width: 75px;
+    height: 100px;
+    position: relative;
+}
+
+.drag-icon-section img {
+    width: 80px;
+    position: absolute;
+    transform-origin: bottom;
+    transition: 250ms ease-in-out;
+}
+
+.drag-icon-section .center {
+    z-index: 2;
+}
+
+.drag-icon-section .right, .drag-icon-section .left {
+    filter: grayscale(.5);
+    transform: scale(.9);
+}
+
+.dragged .drag-icon-section .right {
+    transform: rotate(10deg) translateX(20px) scale(.9);
+    transform-origin: bottom;
+}
+
+.dragged .drag-icon-section .left {
+    transform: rotate(-10deg) translate(-20px) scale(.9);
+    transform-origin: bottom;
+}
+
+.dragged .drag-icon-section .center {
+    transform: translateY(-5px);
+}
+
+.browse-text {
+    color: var(--text-color);
+}
